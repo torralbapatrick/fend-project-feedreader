@@ -100,11 +100,32 @@ $(() => {
             expect($('.feed .entry').length).toBeGreaterThan(0);
         });
     });
-    
+
     /* TODO: Write a new test suite named "New Feed Selection" */
+    describe('New Feed Selection', () => {
+        let feedOne,
+            feedTwo;
+
+        beforeEach(done => {
+            // First feed loaded
+            loadFeed(0, () => {
+                feedOne = $('.feed').html();
+                done();
+            });
+
+            // Second feed loaded
+            loadFeed(1, () => {
+                feedTwo = $('.feed').html();
+                done();
+            });
+        });
 
         /* TODO: Write a test that ensures when a new feed is loaded
          * by the loadFeed function that the content actually changes.
          * Remember, loadFeed() is asynchronous.
          */
+        it('content changes when new feed is loaded', () => {
+            expect(feedOne === feedTwo).toBe(false);
+        });
+    });
 });
