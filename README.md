@@ -1,4 +1,4 @@
-# Feedreader Project
+# Feed Reader Testing Project
 
 This project is completed as part of [Udacity](https://www.udacity.com/) Front End Nanodegree Program. I was given a web-based application that reads RSS feeds. I needed to write tests using [Jasmine](https://jasmine.github.io/) based on the project [rubric](https://review.udacity.com/#!/rubrics/18/view). See `jasmine/spec/feedreader.js`.
 
