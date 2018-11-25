@@ -8,7 +8,7 @@
  * since some of these tests may require DOM elements. We want
  * to ensure they don't run until the DOM is ready.
  */
-$(() => {
+$(function() {
     // RSS Feeds test suite
     describe('RSS Feeds', () => {
         /* A tests that ensures the allFeeds variable
@@ -113,4 +113,4 @@ $(() => {
             expect(feedOne === feedTwo).toBe(false);
         });
     });
-});
+}());
