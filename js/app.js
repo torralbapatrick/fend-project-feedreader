@@ -125,9 +125,9 @@ $(function() {
     menuIcon.on('click', function() {
         $('body').toggleClass('menu-hidden');
     });
-
-    /* Google API: Loads the Feed Reader API and defines what function
-     * to call when the Feed Reader API is done loading.
-     */
-    google.setOnLoadCallback(init);
 }());
+
+/* Google API: Loads the Feed Reader API and defines what function
+ * to call when the Feed Reader API is done loading.
+ */
+google.setOnLoadCallback(init);
