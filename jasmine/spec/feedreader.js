@@ -45,11 +45,11 @@ $(function() {
     // The menu test suite
     describe('The menu', () => {
         let body,
-            callback;
+            menuIcon;
 
         beforeEach(() => {
             body = $('body');
-            callback = jasmine.createSpy('body', 'toggleClass');
+            menuIcon = $('.menu-icon-link');
         });
 
         /* A test that ensures the menu 
@@ -63,11 +63,11 @@ $(function() {
          * when the menu icon is clicked.
          */
         it('changes visibility when clicked', () => {
-            if (callback.calls.count() % 2 === 0) {
-                expect(body.hasClass('menu-hidden')).toBe(true);
-            } else {
-                expect(body.hasClass('menu-hidden')).toBe(false);
-            }
+            menuIcon.click();
+            expect(body.hasClass('menu-hidden')).toBe(false);
+
+            menuIcon.click();
+            expect(body.hasClass('menu-hidden')).toBe(true);
         });
     });
 
@@ -89,20 +89,17 @@ $(function() {
 
     // New Feed Selection test suite
     describe('New Feed Selection', () => {
-        let feedOne,
-            feedTwo;
+        let firstFeed,
+            secondFeed;
 
         beforeEach(done => {
-            // Checks if the first feed is loaded
             loadFeed(0, () => {
-                feedOne = $('.feed').html();
-                done();
-            });
+                firstFeed = $('.feed').html();
 
-            // Checks if the second feed is loaded
-            loadFeed(1, () => {
-                feedTwo = $('.feed').html();
-                done();
+                loadFeed(1, () => {
+                    secondFeed = $('.feed').html();
+                    done();
+                });
             });
         });
 
@@ -110,7 +107,7 @@ $(function() {
          * loadFeed function that the content actually changes.
          */
         it('content changes when new feed is loaded', () => {
-            expect(feedOne === feedTwo).toBe(false);
+            expect(firstFeed).not.toEqual(secondFeed);
         });
     });
 }());
