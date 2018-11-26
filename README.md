@@ -49,7 +49,7 @@ Check the bottom of the page to see the Jasmine console where all the tests are 
 2. The menu
     * Open `jasmine/spec/feedreader.js` in your text editor
     * *Hidden by default:* Change `true` to `false` on line 59
-    * *Changes visibility when clicked:* Change `true` to `false` on line 67
+    * *Changes visibility when clicked:* Change `false` to `true` on line 67
 
 3. Initial Entries
     * Open `jasmine/spec/feedreader.js` in your text editor
@@ -57,7 +57,7 @@ Check the bottom of the page to see the Jasmine console where all the tests are 
 
 4. New Feed Selection
     * Open `jasmine/spec/feedreader.js` in your text editor
-    * Change `false` to `true` on line 113
+    * Change `expect(firstFeed).not.toEqual(secondFeed);` to `expect(firstFeed).toEqual(secondFeed);` on line 110
 
 ## Dependencies
 
